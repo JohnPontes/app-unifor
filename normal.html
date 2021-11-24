@@ -1,0 +1,14 @@
+<h2>Você se encontra com o peso normal, parabéns</h2>
+<label id="resultado"></label><br>
+<label id="valor"></label>
+<script>
+    let str = document.cookie;
+    str = str.split('; ');
+    var result = {};
+    for (var i = 0; i < str.length; i++) {
+        var cur = str[i].split('=');
+        result[cur[0]] = cur[1];
+    } 
+    document.getElementById("resultado").innerHTML ="Resultado IMC: " + (result.resultado*1).toFixed(2);
+    document.getElementById("valor").innerHTML = "Conclusão: " + result.value.replaceAll('%20',' ');
+</script>
